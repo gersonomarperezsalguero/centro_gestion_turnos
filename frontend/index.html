@@ -1,0 +1,58 @@
+<!-- frontend/index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gestión de turnos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <h1>Gestión de turnos - Centro de servicio</h1>
+
+    <!-- Formulario para crear turno -->
+    <section class="form-section">
+      <h2>Asignar nuevo turno</h2>
+      <form id="form-turno">
+        <div class="campo">
+          <label for="nombre">Nombre del cliente:</label>
+          <input type="text" id="nombre" name="nombre" required />
+        </div>
+
+        <div class="campo">
+          <label for="tramite">Tipo de trámite:</label>
+          <input type="text" id="tramite" name="tramite" required />
+        </div>
+
+        <div class="campo">
+          <label for="prioridad">Prioridad:</label>
+          <select id="prioridad" name="prioridad" required>
+            <option value="normal">Normal</option>
+            <option value="urgente">Urgente</option>
+          </select>
+        </div>
+
+        <button type="submit">Agregar turno</button>
+      </form>
+    </section>
+
+    <!-- Lista de turnos en cola -->
+    <section class="lista-section">
+      <h2>Turnos en cola</h2>
+      <ul id="lista-turnos"></ul>
+    </section>
+
+    <!-- Botón atender siguiente y panel -->
+    <section class="atender-section">
+      <button id="btn-siguiente">Atender siguiente</button>
+
+      <div id="panel-siguiente" class="panel-siguiente">
+        <h2>Turno en atención</h2>
+        <p id="detalle-siguiente">Ningún turno seleccionado.</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
